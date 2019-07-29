@@ -1,6 +1,5 @@
 # ===== Importing and defining physical constants =====
-from scipy.constants import pi
-# Converting to cgs system
+pi = 3.141592653589793
 e = 4.80320451e-10
 c = 29979245800.0
 m_e = 9.10938356e-28
