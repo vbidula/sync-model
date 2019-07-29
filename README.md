@@ -3,7 +3,7 @@
 A program for synchrotron spectra modelling and table-model
 creating for XSPEC.
 
-##Instalation
+## Instalation
 
 1. Download the repository to your computer.
 
@@ -13,7 +13,7 @@ creating for XSPEC.
 
 ### Parameters specifying
 All settings are in file `constants.py`. Parameters for distributions have 5 options:
-'''
+```
 beta = {
 'NAME': 'beta',
 'MIN': 0.5,
@@ -21,7 +21,7 @@ beta = {
 'FROZEN': True,
 'METHOD': 0,
 }
-'''
+```
 1. `'NAME'`(string) - name that will be used by XSPEC.
 
 2. `'MIN'`, `'MAX'(float)` - minimum and maximum values for the tabulated parameter.
@@ -47,7 +47,7 @@ Other parameters:
 
 ### Electron distribution choosing
 In the current version, you have to choose electron distribution in file `main.py` using uncommenting. Here's an example of `SmoothBPL` distribution choosing:
-'''
+```
 ##########CHOOSE ELECTRON DISTRIBUTION HERE(using uncommenting)###########
 # dist = Powerlaw(
 #     elec = c.elec1,
@@ -68,15 +68,15 @@ dist = SmoothBPL(
 #    ghigh = c.ghigh,
 )
 #######################################################################
-'''
+```
 
 
 ### Running
 To start the program simply run in terminal:
-'''
+```
 python main.py
-'''
+```
 or
-'''
+```
 python3 main.py
-'''
+```
