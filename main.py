@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 
 print("Electron distribution defining...")
 
-##########CHOOSE ELECTRON DISTRIBUTION HERE(using uncommenting)###########
+##########CHOOSE ELECTRON DISTRIBUTION HERE(by uncommenting)###########
 # dist = Powerlaw(
 #     elec = c.elec1,
 #     glow = c.glow,
