@@ -1,6 +1,6 @@
 # sync-model
 
-A program for synchrotron spectra modelling and table-model
+A program for synchrotron spectra modelling focused on table-model
 creating for XSPEC.
 
 ## Instalation
@@ -10,6 +10,12 @@ creating for XSPEC.
 2. Install all required packages: `numpy`, `scipy`, `pandas`, `progressbar2`.
 
 ## Usage
+
+### Electron distribution choosing
+You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
+1. `'powerlaw'`:
+  ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
+
 
 ### Parameters specifying
 All settings are in file `constants.py`. Parameters for distributions have 5 options:
@@ -44,31 +50,6 @@ Other parameters:
 - `Pdelta` - Parameter delta used in fit (parameter determination precision)
 - `Nproc` - The number of parallel processes to be started for table generating. Do not specify this number greater than the number of available logical processors.
 - `TableName` - name of the table that will be generated.
-
-### Electron distribution choosing
-In the current version, you have to choose electron distribution in file `main.py` by uncommenting. Here's an example of `SmoothBPL` distribution choosing:
-```
-##########CHOOSE ELECTRON DISTRIBUTION HERE(by uncommenting)###########
-# dist = Powerlaw(
-#     elec = c.elec1,
-#     glow = c.glow,
-#     ghigh = c.ghigh,
-# )
-dist = SmoothBPL(
-   elec1 = c.elec1,
-   elec2 = c.elec2,
-   gbreak = c.gbreak,
-   glow = c.glow,
-   ghigh = c.ghigh,
-)
-#dist = Expcutoff(
-#    elec = c.elec1,
-#    beta = c.beta,
-#    glow = c.glow,
-#    ghigh = c.ghigh,
-)
-#######################################################################
-```
 
 
 ### Running

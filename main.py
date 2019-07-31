@@ -2,8 +2,7 @@ import numpy as np
 from multiprocessing import Process
 from time import sleep
 import pandas as pd
-import json
-import os
+import json, os
 
 import constants as c
 from models import *
@@ -16,27 +15,39 @@ warnings.filterwarnings("ignore")
 
 print("Electron distribution defining...")
 
-##########CHOOSE ELECTRON DISTRIBUTION HERE(by uncommenting)###########
-# dist = Powerlaw(
-#     elec = c.elec1,
-#     glow = c.glow,
-#     ghigh = c.ghigh,
-# )
-# dist = SmoothBPL(
-#     elec1 = c.elec1,
-#     elec2 = c.elec2,
-#     gbreak = c.gbreak,
-#     glow = c.glow,
-#     ghigh = c.ghigh,
-# )
-dist = Expcutoff(
-    elec = c.elec1,
-    beta = c.beta,
-    glow = c.glow,
-    ghigh = c.ghigh,
-)
+if c.DIST == 'powerlaw':
+    dist = PowerLaw(
+        s = c.s1,
+        glow = c.glow,
+        ghigh = c.ghigh,
+    )
+elif c.DIST == 'brokenpl':
+    dist = BrokenPL(
+        s1 = c.s1,
+        s2 = c.s2,
+        gbreak = c.gbreak,
+        glow = c.glow,
+        ghigh = c.ghigh,
+    )
+elif c.DIST == 'smoothbrokenpl':
+    dist = SmoothBPL(
+        s1 = c.s1,
+        s2 = c.s2,
+        gbreak = c.gbreak,
+        glow = c.glow,
+        ghigh = c.ghigh,
+    )
+elif c.DIST == 'expcutoffpl':
+    dist = ExpCutoffPL(
+        s = c.s1,
+        beta = c.beta,
+        glow = c.glow,
+        ghigh = c.ghigh,
+    )
+else:
+    raise Exception("There is no such electron distribution {}.".format(c.DIST))
+
 #######################################################################
-# dist.getColsDict()
 
 if c.Escale == 'log':
     E = np.logspace(c.Emin, c.Emax, num = c.Epoints+1)
@@ -48,10 +59,8 @@ else:
 assert c.Nsep > 1, ("Can't separate interval into {} subintervals.".format(c.Nsep,))
 
 nu = keVtoHz(E[1:])
-E
 
 pars_dict = getColsDict(dist)
-pars_dict
 
 # %%
 energy_dict = {}

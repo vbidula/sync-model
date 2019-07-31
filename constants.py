@@ -14,8 +14,17 @@ h = 6.626e-27
 # Magnet field in Gausses
 B = 1
 
+##### CHOOSE ELECTRON DISTRIBUTION HERE #####
+DIST = 'powerlaw'
+# Possible distributions:
+# - 'powerlaw'
+# - 'brokenpl'
+# - 'smoothbrokenpl'
+# - 'expcutoffpl'
+#############################################
+
 # First powerlaw index (also used for simple powerlaw)
-elec1 = {
+s1 = {
 'NAME': 'elec1',
 'MIN': 1.5,
 'MAX': 3,
@@ -24,7 +33,7 @@ elec1 = {
 }
 
 # Second powerlaw index
-elec2 = {
+s2 = {
 'NAME': 'elec2',
 'MIN': 2,
 'MAX': 3.5,
@@ -35,7 +44,7 @@ elec2 = {
 # Cutoff index
 beta = {
 'NAME': 'beta',
-'MIN': 0.5,
+'MIN': 1,
 'MAX': 1.5,
 'FROZEN': True,
 'METHOD': 0,
@@ -53,15 +62,15 @@ beta = {
 # Energy (integration interval) (powers)
 glow = {
 'NAME': 'glow',
-'MIN': 2,
-'MAX': 3,
-'FROZEN': True,
+'MIN': 1,
+'MAX': 5,
+'FROZEN': False,
 'METHOD': 0,
 }
 
 ghigh = {
 'NAME': 'ghigh',
-'MIN': 5,
+'MIN': 4,
 'MAX': 7,
 'FROZEN': False,
 'METHOD': 0,
@@ -86,8 +95,8 @@ Epoints = 500   # Array length of E
 # The number of subintervals - more precisely integration but takes much more time
 Nsep = 5
 
-Nvals = 10  # The number of tabulated values for each parameter
+Nvals = 25  # The number of tabulated values for each parameter
 Pdelta = 1e-2   # Parameter delta used in fit
-Nproc = 4  #The number of parallel processes to be started for table generating
+Nproc = 3  #The number of parallel processes to be started for table generating
 # (do not specify this number greater than the number of avaiable processor cores)
-TableName = "test.fits"  # Output
+TableName = "cutoff.fits"  # Output

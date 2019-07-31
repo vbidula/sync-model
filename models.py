@@ -58,22 +58,18 @@ def getColsDict(dist):
     return(cols_dict)
 
 
-class Powerlaw:
+class PowerLaw:
     def __init__(self, **kwargs):
-        self.elec = kwargs['elec']
+        self.s = kwargs['s']
         self.glow = kwargs['glow']
         self.ghigh = kwargs['ghigh']
 
-    def __call__(self, gamma, elec, *args):
-        '''
-        gamma - array like of floats
-        elind - electron index
-        '''
-        return gamma**(-elec)
+    def __call__(self, gamma, s, *args):
+        return gamma**(-s)
 
     def get_pars(self):
         return((
-            self.elec,
+            self.s,
             self.glow,
             self.ghigh,
         ))
@@ -81,23 +77,23 @@ class Powerlaw:
 class BrokenPL:
 
     def __init__(self, **kwargs):
-        self.elec1 = kwargs['elec1']
-        self.elec2 = kwargs['elec2']
+        self.s1 = kwargs['s1']
+        self.s2 = kwargs['s2']
         self.gbreak = kwargs['gbreak']
         self.glow = kwargs['glow']
         self.ghigh = kwargs['ghigh']
 
 
-    def __call__(self, gamma, elec1, elec2, gbreak, *args):
+    def __call__(self, gamma, s1, s2, gbreak, *args):
             if gamma < 10**gbreak:
-                return gamma**(-elec1)
+                return gamma**(-s1)
             else:
-                return gamma**(-elec2)
+                return gamma**(-s2)
 
     def get_pars(self):
         return((
-            self.elec1,
-            self.elec2,
+            self.s1,
+            self.s2,
             self.gbreak,
             self.glow,
             self.ghigh,
@@ -107,23 +103,23 @@ class BrokenPL:
 class SmoothBPL:
 
     def __init__(self, **kwargs):
-        self.elec1 = kwargs['elec1']
-        self.elec2 = kwargs['elec2']
+        self.s1 = kwargs['s1']
+        self.s2 = kwargs['s2']
         self.gbreak = kwargs['gbreak']
         self.glow = kwargs['glow']
         self.ghigh = kwargs['ghigh']
 
 
-    def __call__(self, gamma, elec1, elec2, gbreak, *args):
+    def __call__(self, gamma, s1, s2, gbreak, *args):
         return(
-            (gamma)**(-elec1) *
-            (1 / (1 + (gamma / 10**gbreak)**2))**((elec2 - elec1) / 2)
+            (gamma)**(-s1) *
+            (1 / (1 + (gamma / 10**gbreak)**2))**((s2 - s1) / 2)
         )
 
     def get_pars(self):
         return((
-            self.elec1,
-            self.elec2,
+            self.s1,
+            self.s2,
             self.gbreak,
             self.glow,
             self.ghigh,
@@ -131,9 +127,9 @@ class SmoothBPL:
 
 
 
-class Expcutoff:
+class ExpCutoffPL:
     def __init__(self, **kwargs):
-        self.elec = kwargs['elec']
+        self.s = kwargs['s']
         self.beta = kwargs['beta']
         self.glow = kwargs['glow']
         # We have to integrate on greater interval to take into account cutoff contribution to the spectra
@@ -141,15 +137,15 @@ class Expcutoff:
         kwargs['ghigh']['MAX'] += 1
         self.ghigh = kwargs['ghigh']
 
-    def __call__(self, gamma, elec, beta, *args):
+    def __call__(self, gamma, s, beta, *args):
         return(
-            gamma**(-elec) *
+            gamma**(-s) *
             np.exp(-(gamma / 10**(args[1] - 1))**beta)
         )
 
     def get_pars(self):
         return((
-            self.elec,
+            self.s,
             self.beta,
             self.glow,
             self.ghigh,
