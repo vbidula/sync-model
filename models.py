@@ -88,7 +88,7 @@ class BrokenPL:
             if gamma < 10**gbreak:
                 return gamma**(-s1)
             else:
-                return gamma**(-s2)
+                return gamma**(-s2) * gbreak**(s2-s1)
 
     def get_pars(self):
         return((

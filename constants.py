@@ -41,7 +41,7 @@ s2 = {
 'METHOD': 0,
 }
 
-# Cutoff index
+# Power of power of exponent in ExoCutoffPL
 beta = {
 'NAME': 'beta',
 'MIN': 1,
@@ -50,14 +50,6 @@ beta = {
 'METHOD': 0,
 }
 
-# Power of power of exp. cutoff :)
-# alpha = {
-# 'NAME': 'alpha',
-# 'MIN': 0.5,
-# 'MAX': 1.5,
-# 'FROZEN': False,
-# 'METHOD': 0,
-# }
 
 # Energy (integration interval) (powers)
 glow = {
