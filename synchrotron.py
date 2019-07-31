@@ -1,9 +1,8 @@
-from scipy.special import kv
+# from scipy.special import kv
 import constants as c
 import numpy as np
 import scipy.integrate as integrate
-import progressbar
-import copy
+import progressbar, copy
 import multiprocessing as mp
 from models import getColsDict
 
@@ -14,10 +13,10 @@ class Synchrotron():
         self.dist = dist
         self.usebar = usebar
 
-    @staticmethod
-    def Rfunc_old(x):
-        return(x**2 / 2 * kv(4 / 3, x / 2) * kv(1 / 3, x / 2)
-               - 0.3 * x**3 / 2 * (kv(4 / 3, x / 2)**2 - kv(1 / 3, x / 2)**2))
+    # @staticmethod
+    # def Rfunc_old(x):
+    #     return(x**2 / 2 * kv(4 / 3, x / 2) * kv(1 / 3, x / 2)
+    #            - 0.3 * x**3 / 2 * (kv(4 / 3, x / 2)**2 - kv(1 / 3, x / 2)**2))
 
     @staticmethod
     def Rfunc(x):
