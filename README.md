@@ -15,8 +15,8 @@ creating for XSPEC.
 You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
 
 1. `'powerlaw'`:  
-  
-  ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
+
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
 
 2. `'brokenpl'`  
   ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\begin{cases}&space;\gamma^{-s_1},&space;\;&space;\gamma&space;<&space;\gamma_{br}&space;\\&space;\gamma^{-s_2}&space;\cdot&space;\gamma^{s_2 - s_1}_{br},&space;\;&space;\gamma&space;>&space;\gamma_{br}&space;\end{cases})
