@@ -25,7 +25,7 @@ DIST = 'powerlaw'
 
 # First powerlaw index (also used for simple powerlaw)
 s1 = {
-'NAME': 'elec1',
+'NAME': 's1',
 'MIN': 1.5,
 'MAX': 3,
 'FROZEN': False,
@@ -34,7 +34,7 @@ s1 = {
 
 # Second powerlaw index
 s2 = {
-'NAME': 'elec2',
+'NAME': 's2',
 'MIN': 2,
 'MAX': 3.5,
 'FROZEN': False,
