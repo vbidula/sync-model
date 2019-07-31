@@ -18,7 +18,8 @@ You have to choose electron distribution in the variable `DIST`. Here's the list
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
 
 2. `'brokenpl'`:    
-      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\begin{cases}&space;\gamma^{-s_1},&space;\;&space;\gamma&space;<&space;\gamma_{br}&space;\\&space;\gamma^{-s_2}&space;\cdot&space;\gamma^{s_2&space;-&space;s_1}_{br},&space;\;&space;\gamma&space;>&space;\gamma_{br}&space;\end{cases})
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1},&space;\text{&space;if&space;}&space;\gamma&space;<&space;\gamma_{br})  
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_2}&space;\cdot&space;\gamma^{s_2&space;-&space;s_1}_{br},&space;\text{&space;if&space;}&space;\gamma&space;>&space;\gamma_{br})
 
 3. `'smoothbrokenpl'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1}&space;\Big(&space;\frac{1}{1&space;&plus;&space;(\frac{\gamma}{\gamma_{br}})^2}&space;\Big)^{\frac{s_2&space;-&space;s_1}{2}})
