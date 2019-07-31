@@ -13,7 +13,7 @@ creating for XSPEC.
 
 ### Electron distribution choosing
 You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
-1. `'powerlaw'`:
+1. `'powerlaw'`:  
   ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
 
 
