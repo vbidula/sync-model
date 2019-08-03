@@ -4,38 +4,48 @@ import numpy as np
 import scipy.integrate as integrate
 import progressbar, copy
 import multiprocessing as mp
+from ctypes import c_double, CDLL
+
 from models import getColsDict
 
+libC = CDLL('libc/Psync.so')
+libC.Psync.restype = c_double
 
 class Synchrotron():
 
     def __init__(self, dist, usebar=True):
         self.dist = dist
         self.usebar = usebar
-
+    ###################### OLD FUNCTIONS ON PYTHON #########################
     # @staticmethod
     # def Rfunc_old(x):
     #     return(x**2 / 2 * kv(4 / 3, x / 2) * kv(1 / 3, x / 2)
     #            - 0.3 * x**3 / 2 * (kv(4 / 3, x / 2)**2 - kv(1 / 3, x / 2)**2))
 
-    @staticmethod
-    def Rfunc(x):
-        return(
-            1.808 * x**(1 / 3) / (1 + 3.4*x**(2/3))**(1/2)
-            * (1 + 2.21 * x**(2 / 3) + 0.347 * x**(4 / 3))
-            / (1 + 1.353 * x**(2 / 3) + 0.217 * x**(4 / 3))
-            * np.exp(-x)
-        )
+    # @staticmethod
+    # def Rfunc(x):
+    #     return(
+    #         1.808 * x**(1 / 3) / (1 + 3.4*x**(2/3))**(1/2)
+    #         * (1 + 2.21 * x**(2 / 3) + 0.347 * x**(4 / 3))
+    #         / (1 + 1.353 * x**(2 / 3) + 0.217 * x**(4 / 3))
+    #         * np.exp(-x)
+    #     )
+    #
+    # def Psync(self, nu, gamma):
+    #     # assert gamma >= 1, ("Gamma factor shoul be greater than one.")
+    #     '''
+    #     nu - array like of floats
+    #     gamma - float greater of equal 1
+    #     '''
+    #     nu_c = (3 * c.B * c.e) / (4 * c.pi * c.m_e * c.c) * gamma**2
+    #     # const = 3**(1 / 2) * e**3 * B / m_e / c**2 #We don't need it, just normalization
+    #     return(self.Rfunc(nu / nu_c))
 
+    # NEW ON C #
     def Psync(self, nu, gamma):
-        # assert gamma >= 1, ("Gamma factor shoul be greater than one.")
-        '''
-        nu - array like of floats
-        gamma - float greater of equal 1
-        '''
-        nu_c = (3 * c.B * c.e) / (4 * c.pi * c.m_e * c.c) * gamma**2
-        # const = 3**(1 / 2) * e**3 * B / m_e / c**2 #We don't need it, just normalization
-        return(self.Rfunc(nu / nu_c))
+        return(
+            libC.Psync(c_double(nu), c_double(gamma), c_double(c.B))
+        )
 
     def get_int_func(self, nu, dist_pars):
         def int_func(gamma):

@@ -1,7 +1,6 @@
 import numpy as np
 import constants as c
 
-
 def gtoE(gamma):
     E = (gamma - 1) * c.m_e * c.c**2
     return(E)
@@ -63,7 +62,7 @@ class PowerLaw:
         self.s = kwargs['s']
         self.glow = kwargs['glow']
         self.ghigh = kwargs['ghigh']
-
+        
     def __call__(self, gamma, s, *args):
         return gamma**(-s)
 

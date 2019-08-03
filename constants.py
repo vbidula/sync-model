@@ -56,7 +56,7 @@ glow = {
 'NAME': 'glow',
 'MIN': 1,
 'MAX': 5,
-'FROZEN': False,
+'FROZEN': True,
 'METHOD': 0,
 }
 
@@ -91,4 +91,4 @@ Nvals = 25  # The number of tabulated values for each parameter
 Pdelta = 1e-2   # Parameter delta used in fit
 Nproc = 3  #The number of parallel processes to be started for table generating
 # (do not specify this number greater than the number of avaiable processor cores)
-TableName = "cutoff.fits"  # Output
+TableName = "сtest.fits"  # Output

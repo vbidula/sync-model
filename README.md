@@ -7,7 +7,13 @@ creating for XSPEC.
 
 1. Download the repository to your computer.
 
-2. Install all required packages: `numpy`, `scipy`, `pandas`, `progressbar2`.
+2. Run
+```
+make
+```
+from the project directory to compile the libraries required by main program.
+
+3. Install all required packages: `numpy`, `scipy`, `pandas`, `progressbar2`.
 
 ## Usage
 
