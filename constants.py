@@ -91,4 +91,4 @@ Nvals = 25  # The number of tabulated values for each parameter
 Pdelta = 1e-2   # Parameter delta used in fit
 Nproc = 3  #The number of parallel processes to be started for table generating
 # (do not specify this number greater than the number of avaiable processor cores)
-TableName = "сtest.fits"  # Output
+TableName = "ctestint.fits"  # Output

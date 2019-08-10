@@ -16,12 +16,12 @@ class Synchrotron():
     def __init__(self, dist, usebar=True):
         self.dist = dist
         self.usebar = usebar
-    ###################### OLD FUNCTIONS ON PYTHON #########################
+    # ##################### OLD FUNCTIONS ON PYTHON #########################
     # @staticmethod
     # def Rfunc_old(x):
     #     return(x**2 / 2 * kv(4 / 3, x / 2) * kv(1 / 3, x / 2)
     #            - 0.3 * x**3 / 2 * (kv(4 / 3, x / 2)**2 - kv(1 / 3, x / 2)**2))
-
+    #
     # @staticmethod
     # def Rfunc(x):
     #     return(
@@ -41,7 +41,7 @@ class Synchrotron():
     #     # const = 3**(1 / 2) * e**3 * B / m_e / c**2 #We don't need it, just normalization
     #     return(self.Rfunc(nu / nu_c))
 
-    # NEW ON C #
+    ### NEW ON C ###
     def Psync(self, nu, gamma):
         return(
             libC.Psync(c_double(nu), c_double(gamma), c_double(c.B))
