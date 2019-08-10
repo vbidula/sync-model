@@ -1,4 +1,4 @@
 #include <stdio.h>
 #include <math.h>
 
-double Psync(double nu, double gamma, double B);
+double Psync(const double nu, const double gamma, const double B);
