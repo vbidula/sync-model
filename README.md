@@ -21,7 +21,7 @@ from the project directory to compile the libraries required by main program.
 You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
 
 1. `'powerlaw'`:    
-      <img src=https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s}>
+      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s})
 
 2. `'brokenpl'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1},&space;\text{&space;if&space;}&space;\gamma&space;<&space;\gamma_{br})  
