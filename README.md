@@ -24,8 +24,8 @@ You have to choose electron distribution in the variable `DIST`. Here's the list
       ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s})
 
 2. `'brokenpl'`:    
-      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1},\text{%20if%20}\gamma%3C\gamma_{br})  
-      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_2}\cdot\gamma^{s_2-s_1}_{br},\text{%20if%20}\gamma%3E\gamma_{br})
+      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1},\text{%20if%20}\gamma\textless\gamma_{br})  
+      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_2}\cdot\gamma^{s_2-s_1}_{br},\text{%20if%20}\gamma\textgreater\gamma_{br})
 
 3. `'smoothbrokenpl'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1}&space;\Big(&space;\frac{1}{1&space;&plus;&space;(\frac{\gamma}{\gamma_{br}})^2}&space;\Big)^{\frac{s_2&space;-&space;s_1}{2}})
