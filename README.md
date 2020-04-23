@@ -5,7 +5,7 @@ creating for XSPEC.
 
 ## Instalation
 
-1. Download the repository to` your computer.
+1. Download the repository to your computer.
 
 2. Run
 ```
@@ -18,7 +18,7 @@ from the project directory to compile the libraries required by main program.
 ## Usage
 
 ### Electron distribution choosing
-You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
+There are 4 models for electron distribution available. It may be specified in the variable `DIST`. Here's the list of all currently possible distributions:
 
 1. `'powerlaw'`:    
       ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s})
@@ -34,7 +34,7 @@ You have to choose electron distribution in the variable `DIST`. Here's the list
       ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1}e^{-(\frac{\gamma}{\gamma_{br}})^\beta})
 
 ### Parameters specifying
-All settings are in file `constants.py`. Parameters for distributions have 5 options:
+Other settings may be modified in the file `constants.py`. All distributions are described by five parameters:
 ```
 beta = {
 'NAME': 'beta',
@@ -44,7 +44,7 @@ beta = {
 'METHOD': 0,
 }
 ```
-1. `'NAME'`(string) - name that will be used by XSPEC.
+1. `'NAME'`(string) - a name which will be used by XSPEC.
 
 2. `'MIN'`, `'MAX'`(float) - minimum and maximum values for the tabulated parameter.
 (in other words, the parameter will be changing from `'MIN'` to `'MAX'`).
@@ -53,12 +53,12 @@ beta = {
 
 4. `'METHOD'`(int) - method of parameter interpolation in XSPEC. `0` for linear, `1` for logarithmic.
 
-You have to specify parameters only for particular electron distribution, for example, `Powerlaw` distribution doesn't need parameter 'beta' to be specified.
+Only parameters for particular electron distribution have to be specified. For instance, `Powerlaw` distribution doesn't need parameter 'beta' to be specified.
 
-You can also define range for energy axis in `Escale`, `Emin`, `Emax`, `Epoints`:
-- `Escale` - Scale of energy axis. Possible values: `'log'`, `'lin'`. If `Escale = 'log'` then `Emin`, `Emax` - powers of ten.
+There is also a possibility to define a range for energy axis in `Escale`, `Emin`, `Emax`, `Epoints`:
+- `Escale` - Scale of energy axis. Possible values: `'log'`, `'lin'`. If `Escale = 'log'` then `Emin`, `Emax` - powers of 10.
 - `Emin`, `Emax` - upper and lower limits.
-- `Epoints` - array length of energy axis. This value should not be lower than number of channels in your data.
+- `Epoints` - array length of energy axis. This value should not be lower than a number of channels in your data.
 
 Other parameters:
 - `Nsep` - number of subintervals for integration. More precisely integration but takes much more time. In most of cases `Nsep = 5` is enough.
@@ -70,10 +70,6 @@ Other parameters:
 
 ### Running
 To start the program simply run:
-```
-python main.py
-```
-or
 ```
 python3 main.py
 ```
