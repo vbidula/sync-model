@@ -28,7 +28,7 @@ You have to choose electron distribution in the variable `DIST`. Here's the list
       ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_2}\cdot\gamma^{s_2-s_1}_{br},\text{%20if%20}\gamma\textgreater\gamma_{br})
 
 3. `'smoothbrokenpl'`:    
-      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1}\Big(\frac{1}{1+(\frac{\gamma}{\gamma_{br}})^2}\Big)^{\frac{s_2-s_1}{2}})
+      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1}\Big(\frac{1}{1%2B(\frac{\gamma}{\gamma_{br}})^2}\Big)^{\frac{s_2-s_1}{2}})
 
 4. `'expcutoff'`:    
       ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s_1}e^{-(\frac{\gamma}{\gamma_{br}})^\beta})
