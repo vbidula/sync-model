@@ -21,11 +21,11 @@ from the project directory to compile the libraries required by main program.
 You have to choose electron distribution in the variable `DIST`. Here's the list of all currently possible distributions:
 
 1. `'powerlaw'`:    
-      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}=\gamma^{-s})
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}=\gamma^{-s})
 
 2. `'brokenpl'`:    
-      ![equation](https://render.githubusercontent.com/render/math?math=\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1},&space;\text{&space;if&space;}&space;\gamma&space;<&space;\gamma_{br})  
-      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}=\gamma^{-s_2}\cdot\gamma^{s_2-s_1}_{br},\text{if}\gamma>\gamma_{br})
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1},&space;\text{&space;if&space;}&space;\gamma&space;<&space;\gamma_{br})  
+      ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}=\gamma^{-s_2}\cdot\gamma^{s_2-s_1}_{br},\text{&space;if&space;}\gamma>\gamma_{br})
 
 3. `'smoothbrokenpl'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1}&space;\Big(&space;\frac{1}{1&space;&plus;&space;(\frac{\gamma}{\gamma_{br}})^2}&space;\Big)^{\frac{s_2&space;-&space;s_1}{2}})
