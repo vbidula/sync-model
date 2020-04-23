@@ -22,7 +22,6 @@ You have to choose electron distribution in the variable `DIST`. Here's the list
 
 1. `'powerlaw'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s})
-      $\frac{dN_e}{dt}$
 
 2. `'brokenpl'`:    
       ![equation](https://latex.codecogs.com/gif.latex?\frac{dN_e}{dt}&space;=&space;\gamma^{-s_1},&space;\text{&space;if&space;}&space;\gamma&space;<&space;\gamma_{br})  
