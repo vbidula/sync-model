@@ -1,6 +1,6 @@
 # sync-model
 
-Important! I keep this code here only as copmarison to my current progress. The code itself is not optimized and not recommended for use.
+Important! I keep this code here only for copmarison to my current progress (in terms of programming experience). The code itself is not optimized and not recommended for use.
 
 A program for synchrotron spectra modelling focused on table-model
 creating for XSPEC.
